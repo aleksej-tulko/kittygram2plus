@@ -13,7 +13,7 @@ class OwnerOrReadOnly(permissions.BasePermission):
         return obj.owner == request.user
 
 
-class ReadOnly(permissions):
+class ReadOnly(permissions.BasePermission):
 
     def has_permission(self, request, view):
         return request.method in permissions.SAFE_METHODS
